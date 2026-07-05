@@ -166,8 +166,9 @@ class HistoryViewModel(app: SupplementApp) : ViewModel() {
     val historyByDay: StateFlow<List<Pair<Long, List<IntakeWithSupplement>>>?> = stateIn(
         intakeDao.getHistory(LocalDate.now().minusDays(30).toEpochDay()).map { rows ->
             rows.groupBy { it.epochDay }
-                .toSortedMap(compareByDescending { it })
-                .map { (day, entries) -> day to entries }
+                .entries
+                .sortedByDescending { it.key }
+                .map { it.key to it.value }
         },
         initial = null,
     )

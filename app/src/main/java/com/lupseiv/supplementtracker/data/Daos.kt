@@ -2,6 +2,7 @@ package com.lupseiv.supplementtracker.data
 
 import androidx.room.Dao
 import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
 
@@ -47,7 +48,7 @@ interface IntakeDao {
     )
     fun getHistory(fromEpochDay: Long): Flow<List<IntakeWithSupplement>>
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(log: IntakeLog)
 
     @Query("DELETE FROM intake_logs WHERE supplementId = :supplementId AND epochDay = :epochDay")
