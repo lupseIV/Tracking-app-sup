@@ -1,0 +1,42 @@
+{
+  "name": "supplement-tracker-desktop",
+  "version": "0.1.0",
+  "description": "Electron shell for the Supplement Tracker app (bundles the Spring Boot backend)",
+  "main": "main.js",
+  "private": true,
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder"
+  },
+  "devDependencies": {
+    "electron": "^37.0.0",
+    "electron-builder": "^26.0.0"
+  },
+  "build": {
+    "appId": "com.lupseiv.supplementtracker",
+    "productName": "Supplement Tracker",
+    "files": [
+      "main.js"
+    ],
+    "extraResources": [
+      {
+        "from": "../backend/target/supplement-tracker-backend-0.1.0.jar",
+        "to": "backend/backend.jar"
+      },
+      {
+        "from": "jre",
+        "to": "jre"
+      }
+    ],
+    "linux": {
+      "target": "AppImage",
+      "category": "Utility"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    }
+  }
+}

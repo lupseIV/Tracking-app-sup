@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: supplement-tracker
+  datasource:
+    # File-based H2 in the user's home dir; SUPPLEMENT_DATA_DIR overrides for packaged builds.
+    url: jdbc:h2:file:${SUPPLEMENT_DATA_DIR:~/.supplement-tracker}/supplements
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: ""
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+
+server:
+  port: ${SUPPLEMENT_PORT:8080}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health

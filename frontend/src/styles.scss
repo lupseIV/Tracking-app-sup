@@ -1,0 +1,34 @@
+// Self-hosted fonts so the app is fully offline (Electron/Capacitor builds).
+@import '@fontsource/roboto/300.css';
+@import '@fontsource/roboto/400.css';
+@import '@fontsource/roboto/500.css';
+@import '@fontsource/material-icons/index.css';
+
+@import '@angular/material/prebuilt-themes/azure-blue.css';
+
+.material-icons {
+  font-family: 'Material Icons';
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+}
+
+.page {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.muted {
+  color: var(--mat-sys-on-surface-variant, rgba(0, 0, 0, 0.6));
+}
+
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  white-space: pre-line;
+}

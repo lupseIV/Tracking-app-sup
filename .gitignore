@@ -1,11 +1,29 @@
-*.iml
-.gradle/
-local.properties
+# Node
+node_modules/
+dist/
+.angular/
+
+# Maven / Java
+target/
+*.jar
+!gradle/wrapper/gradle-wrapper.jar
+
+# Frontend build copied into the backend for packaging
+backend/src/main/resources/static/
+
+# Desktop packaging artifacts
+desktop/jre/
+desktop/dist/
+
+# Local data
+*.db
+*.mv.db
+*.trace.db
+
+# IDE / OS
 .idea/
+.vscode/
 .DS_Store
-build/
-captures/
-.externalNativeBuild/
-.cxx/
-*.apk
-*.aab
+*.iml
+local.properties
+.gradle/
