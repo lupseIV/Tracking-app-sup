@@ -25,8 +25,28 @@ Full-stack supplement tracking app. **Phase 1: fully local, offline-first, no ac
 backend/    Spring Boot 4 REST API (package-per-feature: supplement, usersupplement, intakelog)
 frontend/   Angular 22 app (core/ services+models, features/ lazy routes, shared/)
 desktop/    Electron main process + electron-builder config
+docs/       Use cases + functional/non-functional requirements
 scripts/    build-desktop.sh — full desktop packaging pipeline
 ```
+
+## Documentation
+
+- [`docs/use-cases.md`](docs/use-cases.md) — every functionality as a use case
+  (actors, pre/postconditions, normal / alternate / exceptional flows, UC-01…UC-13)
+- [`docs/requirements.md`](docs/requirements.md) — functional (FR) and
+  non-functional (NFR) requirements with traceability to use cases and code
+- [`AGENTS.md`](AGENTS.md) — project-wide guidance for contributors and AI agents,
+  plus per-subproject files: [`backend/AGENTS.md`](backend/AGENTS.md),
+  [`frontend/AGENTS.md`](frontend/AGENTS.md), [`desktop/AGENTS.md`](desktop/AGENTS.md)
+
+## Contributing — mandatory workflow
+
+Every modification (code, docs, config) is made on a **new branch**
+(`feature/…`, `fix/…`, `docs/…`, `chore/…`) — never directly on the default branch —
+and the same PR must update whatever it affects: the use cases, the functional and
+non-functional requirements, the relevant `AGENTS.md` file(s), the API table below,
+and code comments. Tests (`mvn test`, `npm test`) must be green. Full rules in
+[`AGENTS.md`](AGENTS.md).
 
 ## Development
 
