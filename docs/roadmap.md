@@ -56,6 +56,83 @@
 
 ---
 
+## Feature ideas — inspired by comparable apps & general-purpose use
+
+Backlog of candidate features, grouped by the kind of app that proves they work.
+Not scheduled: when one is picked up, move it into a prioritized section above,
+give it a branch, and follow the mandatory documentation workflow.
+
+### From medication trackers (Medisafe, MyTherapy)
+
+- [ ] **Inventory / refill tracking** — pills-per-bottle count that decrements on each
+      logged intake; "running low" warning at a configurable threshold, with the buy
+      links (UC-04) one tap away — ties the two halves of the app together.
+- [ ] **Flexible schedules** — beyond daily: every N days, specific weekdays,
+      "as needed"; the Today checklist only shows what is due today.
+- [ ] **Cycling protocols** — on/off cycles common for supplements (e.g. 8 weeks on /
+      2 off): define the cycle, auto-pause tracking in off periods, show cycle status.
+- [ ] **Skip with reason** — mark a supplement as intentionally skipped (sick, fasting,
+      ran out) so adherence stats can distinguish "skipped" from "forgot".
+- [ ] **Doctor report export** — PDF/CSV summary of what is taken, dosages, and
+      adherence over a period, to hand to a doctor or pharmacist.
+- [ ] **Interaction warnings** — flag known supplement–supplement conflicts (e.g.
+      calcium impairs iron absorption; zinc–copper balance). Needs a curated local
+      dataset; show as informational warnings, never medical advice (NFR-10).
+
+### From nutrition apps (MyFitnessPal, Cronometer)
+
+- [ ] **Elemental dose totals vs RDA** — store the elemental amount per intake (mg/IU)
+      and show daily totals against reference intakes, warning above upper limits
+      (e.g. vitamin D > 4000 IU/day). Needs dose fields on `Supplement` + a small
+      RDA reference table.
+- [ ] **Barcode scanning** — scan a product's EAN to create a custom supplement
+      (Capacitor camera/ML Kit on Android; Open Food Facts as a free lookup source).
+- [ ] **Product photo & label** — attach a photo of the actual bottle/label to a
+      supplement so the checklist shows *your* product, not a generic name.
+- [ ] **Intake notes** — optional note per log entry ("with breakfast", "felt nauseous")
+      shown in History; the foundation for the correlation journal below.
+
+### From habit trackers (Streaks, Loop, Habitica)
+
+- [ ] **Streaks & adherence stats** — current/longest streak per supplement, 7/30-day
+      adherence %; complements the stats item in Phase 1.x.
+- [ ] **Calendar heatmap** — GitHub-style month/year grid of adherence on the History
+      tab; instantly shows patterns (weekends missed, holiday gaps).
+- [ ] **Partial goals** — "magnesium 5× a week is fine": weekly target counts instead
+      of strict daily, with the progress bar tracking the week.
+- [ ] **Home-screen widget & notification quick-log** (Android) — check off without
+      opening the app: a checklist widget and "Taken ✓" action buttons on reminders.
+- [ ] **Morning/evening stacks** — group supplements into named stacks checked off with
+      one tap; the Today screen sections by stack (morning / with meals / bedtime).
+
+### From health platforms (Apple Health, Google Fit / Health Connect)
+
+- [ ] **Health Connect / HealthKit sync** — write intake events to the OS health store
+      (Android Health Connect first, via Capacitor plugin) so other health apps can
+      correlate them.
+- [ ] **Wellbeing journal & correlations** — optional daily 1–5 ratings (sleep, energy,
+      mood) charted against adherence per supplement over weeks: "did magnesium
+      actually change my sleep?" — the question every supplement user has.
+
+### General-purpose / quality of life
+
+- [ ] **Cost tracking** — price + servings per container ⇒ cost per day/month per
+      supplement and for the whole stack; pairs with inventory tracking.
+- [ ] **Expiry dates** — expiry per bottle with a warning when close; useful for
+      rarely-taken "as needed" supplements.
+- [ ] **Multiple profiles** — separate tracked lists/logs for family members on the
+      same device (schema: add a `profile` table + FK; keep single-profile UX default).
+- [ ] **Onboarding goal wizard** — first-run flow: pick goals (sleep, energy, joints,
+      immunity…) and get a suggested starter selection from the built-in catalog.
+- [ ] **Fuzzy search & tags** — typo-tolerant catalog search; user-defined tags
+      besides categories ("morning", "training days").
+- [ ] **Archive instead of delete** — hide a custom supplement without losing its
+      history (soft-delete flag, mirroring how untracking already preserves logs).
+- [ ] **Backup reminders** — until Phase 2 sync exists, periodically prompt to run the
+      JSON export (Phase 1.x item) so a lost phone doesn't mean lost history.
+
+---
+
 ## Design notes — product shopping search
 
 **Today** the app ships *templated store search links* (UC-04): tapping "Amazon" on
