@@ -35,6 +35,12 @@ scripts/    build-desktop.sh — full desktop packaging pipeline
   (actors, pre/postconditions, normal / alternate / exceptional flows, UC-01…UC-13)
 - [`docs/requirements.md`](docs/requirements.md) — functional (FR) and
   non-functional (NFR) requirements with traceability to use cases and code
+- [`docs/running-guide.md`](docs/running-guide.md) — how to run everything: dev mode,
+  tests, single-process production run, desktop build, configuration, troubleshooting
+- [`docs/android-integration.md`](docs/android-integration.md) — step-by-step Capacitor
+  plan for the Android build
+- [`docs/roadmap.md`](docs/roadmap.md) — TODO list of next functionalities (reminders,
+  editing, stats, shopping search, Android, cloud sync, CI)
 - [`AGENTS.md`](AGENTS.md) — project-wide guidance for contributors and AI agents,
   plus per-subproject files: [`backend/AGENTS.md`](backend/AGENTS.md),
   [`frontend/AGENTS.md`](frontend/AGENTS.md), [`desktop/AGENTS.md`](desktop/AGENTS.md)

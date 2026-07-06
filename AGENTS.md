@@ -13,7 +13,7 @@ Local-first supplement tracker (Phase 1: no account, no cloud, offline-first).
 | `backend/` | Spring Boot 4.1, Java 21, Maven, H2 + Flyway | REST API + persistence; serves the Angular build in packaged mode |
 | `frontend/` | Angular 22 (standalone, signals, OnPush), Angular Material, vitest | The single UI, built once for web/desktop (and Android via Capacitor later) |
 | `desktop/` | Electron + electron-builder | Desktop shell: spawns the backend jar, opens `http://127.0.0.1:8090` |
-| `docs/` | Markdown | Use cases (`use-cases.md`) and functional/non-functional requirements (`requirements.md`) |
+| `docs/` | Markdown | Use cases (`use-cases.md`), requirements (`requirements.md`), TODO roadmap (`roadmap.md`), running guide (`running-guide.md`), Android plan (`android-integration.md`) |
 | `scripts/` | Bash | `build-desktop.sh` — full desktop packaging pipeline |
 
 Phase 2 (cloud sync, JWT auth) is **designed but not built**. Its seams — `deviceId`
