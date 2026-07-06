@@ -96,9 +96,12 @@ of scope here and only referenced where seams exist.
 | **System interaction** | None (client-side only; URLs come from UC-03 payload) |
 
 **Normal flow**
-1. User taps a store card (Amazon / iHerb / eMAG, or a custom store).
+1. User taps a store card (Amazon / iHerb / eMAG / Google Shopping, or a custom store).
 2. Frontend delegates to `LinkOpenerService`, which opens the templated search URL in a new browser tab (`window.open`; on the future Android build this is the seam for the Capacitor Browser plugin).
 3. The store's search results for that supplement appear in the external browser.
+
+**Alternate flow**
+- 1a. *User taps "Google Shopping"*: the browser shows an aggregated product list for that supplement from many different producers and shops, rather than a single store's catalog.
 
 **Exceptional flow**
 - 2a. *No internet connection*: the external browser shows its own offline error. The app itself is unaffected (buy links are the only feature that needs the internet).

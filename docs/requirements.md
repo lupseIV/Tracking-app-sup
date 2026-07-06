@@ -11,7 +11,7 @@
 | FR-2 | The system SHALL list the catalog (built-in + custom) alphabetically and mark which entries are tracked and which are custom. | UC-01 | `GET /api/supplements`, `CatalogComponent` |
 | FR-3 | The system SHALL filter the catalog case-insensitively by name or category substring. | UC-02 | `SupplementRepository.search`, catalog search field |
 | FR-4 | The system SHALL show a detail view per supplement with benefits, dosage, and buy options. | UC-03 | `GET /api/supplements/{id}`, `DetailComponent` |
-| FR-5 | Buy options SHALL be templated store search URLs (Amazon, iHerb, eMAG for built-ins) that open in the system browser. | UC-04 | seed data, `LinkOpenerService` |
+| FR-5 | Buy options SHALL be templated store search URLs (Amazon, iHerb, eMAG, and Google Shopping — a cross-shop product aggregator — for built-ins) that open in the system browser. | UC-04 | seed migrations `V2`/`V3`, `LinkOpenerService` |
 | FR-6 | The user SHALL be able to toggle "I take this" on/off per supplement; toggling off keeps intake history; toggling on again reactivates the same record. | UC-05, UC-06 | `POST/DELETE /api/user-supplements/{id}` |
 | FR-7 | The user SHALL be able to create custom supplements (name required; category, dosage, description, benefits, buy links optional; blank category defaults to "Custom"). | UC-07 | `POST /api/supplements`, add-supplement dialog |
 | FR-8 | The user SHALL be able to delete custom supplements after confirmation; built-in supplements SHALL NOT be deletable (409). Deletion cascades to tracking state and intake logs. | UC-08 | `DELETE /api/supplements/{id}`, confirm dialog, FK cascade |

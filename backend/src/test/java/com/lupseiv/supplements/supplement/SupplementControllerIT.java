@@ -41,8 +41,9 @@ class SupplementControllerIT extends BaseControllerIntegrationTest {
                 .andExpect(jsonPath("$.isCustom").value(false))
                 .andExpect(jsonPath("$.tracked").value(false))
                 .andExpect(jsonPath("$.benefits.length()").value(3))
-                .andExpect(jsonPath("$.buyLinks.length()").value(3))
-                .andExpect(jsonPath("$.buyLinks[0].storeName").value("Amazon"));
+                .andExpect(jsonPath("$.buyLinks.length()").value(4))
+                .andExpect(jsonPath("$.buyLinks[0].storeName").value("Amazon"))
+                .andExpect(jsonPath("$.buyLinks[3].storeName").value("Google Shopping"));
     }
 
     @Test

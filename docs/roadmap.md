@@ -63,10 +63,10 @@ Vitamin C opens Amazon's own search results in the browser. There is **no in-app
 aggregated product list** ("many vitamin C products from different producers and
 sites in one list") — that requires a product-data source. Options, by effort:
 
-1. **Zero-cost, no API — Google Shopping link** *(quick win)*: add a fourth buy link
-   `https://www.google.com/search?tbm=shop&q={query}` to the seed (new migration).
-   Google aggregates products across shops and producers; still opens in the browser,
-   not in-app.
+1. ~~**Zero-cost, no API — Google Shopping link**~~ ✅ **shipped** (migration
+   `V3__add_google_shopping_links.sql`): every built-in supplement now has a fourth
+   buy link `https://www.google.com/search?tbm=shop&q={query}`. Google aggregates
+   products across shops and producers; opens in the browser, not in-app.
 2. **Google Programmable Search JSON API** — needs an API key (free tier ≈ 100
    queries/day). Returns generic web results, not structured product cards; mediocre
    fit.
